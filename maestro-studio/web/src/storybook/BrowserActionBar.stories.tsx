@@ -1,5 +1,5 @@
 import BrowserActionBar from "../components/device-and-device-elements/BrowserActionBar";
-import {useEffect, useState} from "react";
+import { useEffect, useState } from "react";
 
 export default {
   title: "BrowserActionBar",
@@ -10,7 +10,7 @@ export const Main = () => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentUrl(old => {
+      setCurrentUrl((old) => {
         // if no scheme, add https
         if (!old.startsWith("http")) {
           old = "https://" + old;
@@ -28,7 +28,7 @@ export const Main = () => {
       setCurrentUrl(url);
       setIsLoading(false);
     }, 1000);
-  }
+  };
   return (
     <div className="flex flex-col w-full">
       <BrowserActionBar

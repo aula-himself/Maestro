@@ -1,8 +1,6 @@
 module.exports = {
-  "stories": [
-    "../src/**/*.stories.mdx",
-    "../src/**/*.stories.@(js|jsx|ts|tsx)"
-  ],
+  "stories": ["../src/**/*.mdx", "../src/**/*.stories.@(js|jsx|ts|tsx)"],
+
   "addons": [
     "@storybook/addon-links",
     "@storybook/addon-essentials",
@@ -10,9 +8,19 @@ module.exports = {
     "@storybook/preset-create-react-app",
     "storybook-addon-react-router-v6"
   ],
-  "framework": "@storybook/react",
-  "core": {
-    "builder": "@storybook/builder-webpack5"
+
+  "framework": {
+    name: "@storybook/react-webpack5",
+    options: {}
   },
+
   "staticDirs": ['../public', '../storybook-assets'],
+
+  docs: {
+    autodocs: true
+  },
+
+  typescript: {
+    reactDocgen: "react-docgen-typescript"
+  }
 }
